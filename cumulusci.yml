@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.88.0'
+project:
+    name: Test-Project-26
+    package:
+        name: Test-Project-26
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Test-Project-26/tests
+            options:
+                outputdir: robot/Test-Project-26/results
+
+    robot_testdoc:
+        options:
+            path: robot/Test-Project-26/tests
+            output: robot/Test-Project-26/doc/Test-Project-26_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
